@@ -1,0 +1,33 @@
+[project]
+name = "Healthcare"
+version = "1.0.0"
+description = "Healthcare Management"
+readme = "README.md"
+requires-python = ">=3.8"
+
+authors = [
+    { name = "Ishwar", email = "ishwarcmullur888@gmail.com" }
+]
+
+# Production dependencies
+dependencies = [
+    "faker>=13.3.3"
+]
+
+# Development dependencies
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.2.0",
+    "pytest-cov>=3.0.0",
+    "black>=23.0.0",
+    "isort>=5.10.1",
+    "sphinx>=5.0.0"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]

@@ -1,8 +1,8 @@
 from configuration.logger_configuration import configure_logger
-from models.doctor import Doctor
-from models.appointment import Appointment
-from models.patient import Patient
-from exceptions.doctor_not_found_exception import DoctorNotFoundException
+from src.models.doctor import Doctor
+from src.models.appointment import Appointment
+from src.models.patient import Patient
+from src.exceptions.doctor_not_found_exception import DoctorNotFoundException
 
 logger = configure_logger()
 
@@ -18,7 +18,9 @@ class DoctorStore:
         for doctor in self.doctors:
             if doctor.id == doctor_id:
                 return doctor
-            raise DoctorNotFoundException(doctor_id)
+            else:
+                logger.warning(f"Doctor with ID {doctor_id} not found.")
+                raise DoctorNotFoundException(f"Doctor with ID {doctor_id} not found.")
 
 
     def get_doctors_by_specialization(self, specialization: str) -> list[Doctor]:

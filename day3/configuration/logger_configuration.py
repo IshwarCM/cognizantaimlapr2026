@@ -30,7 +30,3 @@ def configure_logger():
 
     return logger
 
-if __name__ == "__main__":
-    # Example usage
-    logger = configure_logger()
-    logger.info("Logger configured successfully.")

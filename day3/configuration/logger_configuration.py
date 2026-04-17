@@ -1,23 +1,36 @@
-# configure log format
 import logging
 
 
 def configure_logger():
-    """Configure the logger for the healthcare application."""
+    """Configure and return a logger for the healthcare application."""
 
-    """create a logger instance with a specific name and set its level to DEBUG"""
-    logger = logging.getLogger("Healthcare Logger")
+    # Create logger
+    logger = logging.getLogger("healthcare.logger")
     logger.setLevel(logging.DEBUG)
 
-    """check if the logger already has handlers to avoid adding 
-    multiple handlers in case of multiple calls to this function. """
-    if not logger.hasHandlers():
+    # Prevent duplicate logs if root logger is configured elsewhere
+    logger.propagate = False
+
+    # Avoid adding multiple handlers on repeated calls
+    if logger.hasHandlers():
         return logger
 
-    file_handler = logging.FileHandler("healthcare.log")
+    # Create file handler
+    file_handler = logging.FileHandler("healthcare.log", encoding="utf-8")
     file_handler.setLevel(logging.DEBUG)
-    formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+
+    # Create formatter
+    formatter = logging.Formatter(
+        "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    )
     file_handler.setFormatter(formatter)
+
+    # Add handler to logger
     logger.addHandler(file_handler)
 
     return logger
+
+if __name__ == "__main__":
+    # Example usage
+    logger = configure_logger()
+    logger.info("Logger configured successfully.")

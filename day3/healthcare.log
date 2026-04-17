@@ -3,3 +3,5 @@
 2026-04-17 06:32:09,945 - healthcare.logger - INFO - Patient added: Patient Bob Williams, ID: 101, DOB: 1988-03-12, Disease: Migraine
 2026-04-17 06:32:10,008 - healthcare.logger - INFO - Appointment added: Appointment ID: 1001, Patient ID: 101, Doctor ID: 1, Date: 2026-04-20 00:00:00, Time: 1900-01-01 11:00:00
 2026-04-17 06:32:10,008 - healthcare.logger - INFO - Application finished successfully.
+2026-04-17 11:43:54,254 - healthcare.logger - ERROR - Running the application...
+2026-04-17 11:44:50,880 - healthcare.logger - ERROR - Mobile number must be a 10-digit numeric string.

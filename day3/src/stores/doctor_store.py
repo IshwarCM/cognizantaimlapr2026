@@ -18,9 +18,9 @@ class DoctorStore:
         for doctor in self.doctors:
             if doctor.id == doctor_id:
                 return doctor
-            else:
-                logger.warning(f"Doctor with ID {doctor_id} not found.")
-                raise DoctorNotFoundException(f"Doctor with ID {doctor_id} not found.")
+
+        logger.warning(f"Doctor with ID {doctor_id} not found.")
+        raise DoctorNotFoundException(f"Doctor with ID {doctor_id} not found.")
 
 
     def get_doctors_by_specialization(self, specialization: str) -> list[Doctor]:

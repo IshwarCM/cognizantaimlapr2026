@@ -1,10 +1,10 @@
 # create customer json data loader implementation from customer data loader abstract class
 
 import json
-from models.customer import Customer
-from models.full_name import FullName
-from dataloaders.customer_data_loader import CustomerDataLoader
-from stores.customer_store_impl import CustomerStoreImpl
+from src.models.customer import Customer
+from src.models.full_name import FullName
+from src.dataloaders.customer_data_loader import CustomerDataLoader
+from src.stores.customer_store_impl import CustomerStoreImpl
 
 class CustomerJSONDataLoader(CustomerDataLoader):
     def load_data(self, file_path, customer_store: CustomerStoreImpl):

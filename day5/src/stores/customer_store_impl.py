@@ -1,6 +1,6 @@
 #create customer store implementation from customer store abstract class
-from exceptions.customer_not_found import CustomerNotFoundException
-from stores.customer_store import CustomerStore
+from src.exceptions.customer_not_found import CustomerNotFoundException
+from src.stores.customer_store import CustomerStore
 class CustomerStoreImpl(CustomerStore):
     def __init__(self):
         self.customers = []

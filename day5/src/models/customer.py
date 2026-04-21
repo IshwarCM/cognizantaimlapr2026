@@ -1,7 +1,7 @@
 #create customer class using pydantic
 
 from pydantic import BaseModel, Field,EmailStr
-from models.full_name import FullName
+from src.models.full_name import FullName
 
 class Customer(BaseModel):
     customer_id: int = Field(..., gt=0, description="The unique identifier for the customer")
